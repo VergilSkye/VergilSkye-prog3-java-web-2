@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Java EE Trab 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<h:outputStylesheet library="css" name="principal.css" />
+	<h:outputStylesheet library="css" name="default.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="sticky-footer-navbar.css" />
+	<h:outputStylesheet library="css" name="jumbotron.css" />
+
+
+	<meta name="description" content="Academic work" />
+	<meta name="author" content="Virgilio" />
+
+
+</h:head>
+
+<h:body>
+	<header>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="#">Trabalho 7</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarCollapse" aria-controls="navbarCollapse"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item "><a class="nav-link" href="index.jsf">Home
+					</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="carros.jsf">Carros <span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="multas.jsf">Multas</a></li>
+
+				</ul>
+				<div>
+					<form class="form-inline mt-2 mt-md-0">
+
+						<h:inputText id="placa-id" value="#{multaBean.placa}"
+							class="form-control mr-sm-2" placeholder="Placa"
+							aria-label="Search">	
+						</h:inputText>
+						<h:link outcome="/listarMultados.jsf"
+							class="btn btn-outline-success my-2 my-sm-0" >Procurar Multa</h:link>
+					</form>
+
+				</div>
+
+			</div>
+		</nav>
+	</header>
+
+
+	<div role="main" class="container">
+		<div class="row">
+			<div class=" mr-4">
+				<p:menu>
+					<p:menuitem value="Criar" url="/carros.jsf" icon="pi pi-times" />
+					<p:menuitem value="Alterar" url="/alterarCarros.jsf"
+						icon="pi pi-times" />
+					<p:menuitem value="Excluir" url="/excluirCarros.jsf"
+						icon="pi pi-times" />
+					<p:menuitem value="Listar Todos" url="/listarCarros.jsf"
+						icon="pi pi-times" />
+					<p:menuitem value="Pesquisar" url="/pesquisarCarros.jsf"
+						icon="pi pi-times" />
+				</p:menu>
+			</div>
+
+			<div class="col-md-6 col-md-offset-0 ml-4">
+				<p:dataTable style="width:32em" var="veiculo"
+					value="#{veiculoBean.veiculos}">
+					<p:column headerText="Placa">
+						<h:outputText value="#{veiculo.placa}" />
+					</p:column>
+					<p:column headerText="Ano de Fabricação">
+						<h:outputText value="#{veiculo.anoFabricacao}" />
+					</p:column>
+					<p:column headerText="Ano do Modelo">
+						<h:outputText value="#{veiculo.anoModelo}" />
+					</p:column>
+					<p:column headerText="Cor">
+						<h:outputText value="#{veiculo.cor}" />
+					</p:column>
+				</p:dataTable>
+			</div>
+		</div>
+	</div>
+
+
+
+	<footer class="footer">
+		<div class="text-center text-light"
+			style="background: linear-gradient(135deg, rgba(189, 195, 199, 1) 0%, rgba(17, 24, 31) 68%, rgba(17, 24, 31, 1) 100%);">
+			© 2018 Copyright: <a
+				href="https://www.facebook.com/virgilio.stefaninpacheco "
+				rel="external" class="ml-2"> Virgilio Stefanin</a> <a
+				href="https://github.com/VergilSkye/prog3-java-web/" rel="external"><h:graphicImage
+					library="images" name="git.png" swidth="30" height="30" /></a>
+		</div>
+	</footer>
+
+
+</h:body>
+
+</html>
