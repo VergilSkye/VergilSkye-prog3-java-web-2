@@ -7,9 +7,11 @@ SYSTEM
 	<session-factory>
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">org.postgresql.Driver</property>
-		<property name="connection.url">jdbc:postgresql://localhost:5432/aula14</property>
-		<property name="connection.username">postgres</property>
-		<property name="connection.password">root</property>
+		<property name="connection.url">${hibernate_db_name}</property>
+		<property name="connection.username">${hibernate_username}</property>
+		<property name="connection.password">${hibernate_password}</property>
+		
+		
 		<!-- JDBC connection pool (use the built-in) -->
 		<!-- <property name="connection.pool_size">1</property> -->
 		<!-- SQL dialect -->
@@ -20,6 +22,9 @@ SYSTEM
 		<!-- <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property> -->
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
+		
+		<!-- Update database on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
 		<!-- Drop and re-create the database schema on startup -->
 		 <!-- <property name="hbm2ddl.auto">create</property>-->
 		<mapping class="br.com.prog3.aula14.model.Veiculo" />
