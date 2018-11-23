@@ -1,7 +1,6 @@
-~/
-trabalho6/~/
-trabalho6/home/
-trabalho6/.settings/
-trabalho6/Procfile
-trabalho6/target/
-/target/
+/~
+/home
+/target
+/.metadata
+/.settings
+Procfile
