@@ -22,7 +22,7 @@ Trabalho 6 | Trabalho 7
 ------------
 Clone o diretório
 ``` 
-git clone https://github.com/VergilSkye/prog3-java-web.git
+git clone https://github.com/VergilSkye/prog3-java-web-2
 ```
 Dê build na pasta do projeto escolhido
 ``` 
